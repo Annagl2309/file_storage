@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class Message implements Serializable {
 
     private String command;
-    private File file;
+    private  File file;
     private byte[] data;
 
     public Message(String command, File file, byte[] data) {

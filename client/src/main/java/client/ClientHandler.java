@@ -1,3 +1,5 @@
+package client;
+
 import common.Message;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

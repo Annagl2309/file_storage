@@ -1,3 +1,5 @@
+package client;
+
 import common.Message;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -18,7 +20,6 @@ import java.util.Scanner;
 import java.util.function.Consumer;
 
 public class Client {
-
     private DataInputStream in;
     private DataOutputStream out;
 
@@ -32,8 +33,12 @@ public class Client {
         this.port = port;
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
-        File file = new File("client/dir/my-file.txt");
+    static File file = new File("client/dir/my-file.txt");
+
+    public static void main(String[] args) {
+    }
+
+    public static void sendMessage() throws IOException, InterruptedException {
         Message message = new Message("put", file, Files.readAllBytes(file.toPath()));
         new Client("localhost", 9000).send(message, (response) -> {
             System.out.println("response = " + response);
@@ -48,7 +53,7 @@ public class Client {
         }
     }
 
-    private void send(Message message, Consumer<String> callback) throws InterruptedException {
+    public void send(Message message, Consumer<String> callback) throws InterruptedException {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
         try {
@@ -84,6 +89,10 @@ public class Client {
             return  e.getMessage();
         }
         return login;
+    }
+
+    public static String getFile() {
+        return file.getName();
     }
 
 }
