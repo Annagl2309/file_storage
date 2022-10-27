@@ -5,3 +5,4 @@
 *.idea/
 
 git rm --cached pom.xml
+git rm -r --cached .idea
