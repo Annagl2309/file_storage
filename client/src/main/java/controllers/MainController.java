@@ -1,17 +1,15 @@
 package controllers;
 
 import client.Client;
-import common.Message;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
 import java.io.IOException;
-import java.util.Arrays;
+
 import java.util.Collections;
 
-import static client.Client.*;
 
 public class MainController {
 
