@@ -1,9 +1,0 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-*.xml
-*.idea/
-
-git rm --cached pom.xml
-git rm -r --cached .idea
-git rm --cached --ignore-unmatch pom.xml
